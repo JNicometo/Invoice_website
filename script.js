@@ -3,21 +3,8 @@
 // ========================================
 
 // Stripe Checkout
-async function checkout() {
-  try {
-    const response = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      alert('Something went wrong. Please try again.');
-    }
-  } catch (error) {
-    alert('Unable to connect to payment server. Please try again later.');
-  }
+function checkout() {
+  window.location.href = 'https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
