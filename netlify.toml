@@ -1,0 +1,37 @@
+[build]
+  publish = "landing-page"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Clean API paths → Netlify Functions
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/activate-license"
+  to = "/.netlify/functions/activate-license"
+  status = 200
+
+[[redirects]]
+  from = "/api/get-license"
+  to = "/.netlify/functions/get-license"
+  status = 200
+
+# CORS headers for endpoints the Electron app calls
+[[headers]]
+  for = "/api/activate-license"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+[[headers]]
+  for = "/api/get-license"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

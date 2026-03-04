@@ -14,6 +14,9 @@
     <meta property="og:description" content="Professional invoicing for $199. One-time purchase, no subscriptions.">
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -55,6 +58,22 @@
     </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
+
+    <!-- HEADER / NAV -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="assets/images/logo.svg" alt="InvoicePro Logo" class="w-10 h-10 rounded-lg">
+                <span class="text-2xl font-bold text-gray-900">InvoicePro</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition font-medium">Features</a>
+                <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition font-medium">Pricing</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-600 transition font-medium">FAQ</a>
+                <a href="https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition">Get Started</a>
+            </nav>
+        </div>
+    </header>
 
     <!-- HERO SECTION -->
     <section class="bg-gradient-to-br from-blue-50 to-white py-20 px-4 sm:px-6 lg:px-8">
@@ -98,7 +117,7 @@
 
                     <!-- CTA Button -->
                     <div class="space-y-4">
-                        <a href="#pricing" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
+                        <a href="https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg transition duration-200 transform hover:scale-105">
                             Get Started
                         </a>
                         <p class="text-sm text-gray-600">
@@ -227,7 +246,7 @@
     </section>
 
     <!-- SOLUTION SECTION -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                 Own Your Tools. Own Your Data.
@@ -458,13 +477,13 @@
                             </li>
                         </ul>
 
-                        <a href="#buy" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg transition duration-200 transform hover:scale-105 mb-4">
+                        <a href="https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg transition duration-200 transform hover:scale-105 mb-4">
                             Buy Now - $199
                         </a>
 
                         <p class="text-sm text-gray-600 font-semibold">
                             Launch pricing ends<br>
-                            February 28, 2025
+                            March 7, 2026
                         </p>
                     </div>
                 </div>
@@ -562,7 +581,7 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
                 Frequently Asked Questions
@@ -660,7 +679,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer px-6 pb-6">
-                        <p class="text-gray-600">Email support at <a href="mailto:support@[yourdomain].com" class="text-blue-600 hover:underline">support@[yourdomain].com</a> - we respond within 24-48 hours.</p>
+                        <p class="text-gray-600">Email support at <a href="mailto:jnicometo@gritsoftware.dev" class="text-blue-600 hover:underline">jnicometo@gritsoftware.dev</a> - we respond within 24-48 hours.</p>
                     </div>
                 </div>
             </div>
@@ -678,12 +697,12 @@
             </p>
 
             <div class="space-y-6">
-                <a href="#" class="inline-block bg-white text-blue-600 hover:bg-gray-100 text-xl font-bold py-5 px-12 rounded-lg shadow-2xl transition duration-200 transform hover:scale-105">
-                    Get Started
+                <a href="https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00" class="inline-block bg-white text-blue-600 hover:bg-gray-100 text-xl font-bold py-5 px-12 rounded-lg shadow-2xl transition duration-200 transform hover:scale-105">
+                    Buy Now - $199
                 </a>
 
                 <div class="text-blue-100">
-                    <p class="text-lg mb-2">Launch special ends February 28th</p>
+                    <p class="text-lg mb-2">Launch special ends March 7th</p>
                     <p class="flex items-center justify-center text-base">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -693,12 +712,6 @@
                 </div>
             </div>
 
-            <!-- Payment Note -->
-            <div class="mt-8">
-                <p class="text-xs text-blue-200 opacity-75 max-w-xl mx-auto">
-                    Payment processing coming soon. Contact <a href="mailto:sales@[yourdomain].com" class="underline hover:text-white">sales@[yourdomain].com</a> to purchase.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -708,7 +721,10 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <!-- Column 1 -->
                 <div>
-                    <h3 class="text-white text-xl font-bold mb-4">InvoicePro</h3>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/images/logo.svg" alt="InvoicePro Logo" class="w-8 h-8 rounded-lg">
+                        <h3 class="text-white text-xl font-bold">InvoicePro</h3>
+                    </div>
                     <p class="text-gray-400">Own your tools. Own your data.</p>
                 </div>
 
@@ -726,7 +742,7 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4">Support</h4>
                     <ul class="space-y-2">
-                        <li><a href="mailto:support@[yourdomain].com" class="hover:text-white transition">Contact: support@[yourdomain].com</a></li>
+                        <li><a href="mailto:jnicometo@gritsoftware.dev" class="hover:text-white transition">jnicometo@gritsoftware.dev</a></li>
                         <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
                     </ul>
@@ -735,7 +751,7 @@
 
             <!-- Bottom -->
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
-                <p>&copy; 2025 InvoicePro. All rights reserved.</p>
+                <p>&copy; 2026 InvoicePro. All rights reserved.</p>
             </div>
         </div>
     </footer>

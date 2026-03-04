@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Complete - OwnInvoice</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="assets/images/logo.svg" alt="OwnInvoice Logo" class="w-10 h-10 rounded-lg">
+                    <span class="text-2xl font-bold text-gray-900">OwnInvoice</span>
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition font-medium">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent mb-4"></div>
+            <p class="text-xl text-gray-600">Retrieving your license key...</p>
+        </div>
+
+        <!-- Success State -->
+        <div id="success" class="hidden">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">Thank You!</h1>
+                <p class="text-xl text-gray-600">Your purchase is complete. Here is your license key.</p>
+            </div>
+
+            <!-- License Key Display -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8 border-2 border-green-200">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Your License Key</label>
+                <div class="flex items-center gap-3">
+                    <code id="license-key" class="flex-1 block bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-xl sm:text-2xl font-mono font-bold text-gray-900 tracking-wider text-center select-all"></code>
+                    <button onclick="copyLicenseKey()" id="copy-btn" class="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition whitespace-nowrap">
+                        Copy
+                    </button>
+                </div>
+                <p id="email-sent" class="text-sm text-gray-500 mt-3"></p>
+                <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <p class="text-sm text-yellow-800 font-medium">
+                        Save this key! You will need it to activate the app.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Next Steps</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Download OwnInvoice</h3>
+                            <p class="text-gray-600 mb-3">Choose your platform below.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition font-medium">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                                    Windows
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition font-medium">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                    macOS
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition font-medium">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a7.3 7.3 0 00.076.478c.036.178.079.36.129.541.096.348.225.69.406 1.018.273.497.658.974 1.205 1.38-.1.053-.198.109-.293.166l.013.01c.452.302.965.447 1.486.447a3.6 3.6 0 001.295-.256c.182-.073.361-.161.529-.265.324-.198.6-.448.768-.598a1.2 1.2 0 01.15-.14c.249-.192.552-.313.87-.337.35-.027.678.068.951.211.195.102.366.227.496.336.088.075.162.144.218.197.271.26.583.466.925.597.395.15.824.207 1.257.144.361-.052.703-.192 1.013-.395l.018-.012c.089.06.18.115.271.166.558.306 1.195.371 1.812.221.358-.087.693-.244.991-.459.081-.059.162-.123.24-.19.268.236.593.418.968.508.481.116.977.08 1.434-.068.357-.116.688-.302.977-.551.068-.059.133-.121.195-.187.249.143.518.239.794.268.48.054.969-.062 1.397-.321.355-.215.648-.518.855-.882l.057-.107c.122-.249.225-.522.295-.817.104-.44.14-.903.095-1.362a6.4 6.4 0 00-.262-1.267c-.295-.861-.696-1.678-1.08-2.39-.449-.831-.771-1.462-.82-2.247-.07-1.127.363-2.073 1.02-3.062.365-.548.792-1.098 1.089-1.735.364-.782.529-1.677.217-2.697-.093-.303-.236-.595-.417-.862-.514-.76-1.333-1.263-2.175-1.558-.672-.236-1.39-.341-2.098-.35z"/></svg>
+                                    Linux
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Install and launch the app</h3>
+                            <p class="text-gray-600">Run the installer and open OwnInvoice Desktop.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Enter your license key</h3>
+                            <p class="text-gray-600">On first launch, paste your license key and click Activate. You're all set!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="text-center text-gray-500 text-sm">
+                <p>Need help? Contact <a href="mailto:jnicometo@gritsoftware.dev" class="text-blue-600 hover:underline">jnicometo@gritsoftware.dev</a></p>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="hidden text-center py-20">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-4">
+                <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Something went wrong</h1>
+            <p id="error-message" class="text-xl text-gray-600 mb-4"></p>
+            <p class="text-gray-500">Contact support: <a href="mailto:jnicometo@gritsoftware.dev" class="text-blue-600 hover:underline">jnicometo@gritsoftware.dev</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="max-w-4xl mx-auto text-center text-gray-500">
+            <p>&copy; 2026 OwnInvoice by Grit Software. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchLicense() {
+            const params = new URLSearchParams(window.location.search);
+            const sessionId = params.get("session_id");
+
+            if (!sessionId) {
+                showError("No session ID found. If you just completed a purchase, please check your email for your license key.");
+                return;
+            }
+
+            let attempts = 0;
+            const maxAttempts = 10;
+            const retryDelay = 2000;
+
+            while (attempts < maxAttempts) {
+                try {
+                    const response = await fetch(`/api/get-license?session_id=${encodeURIComponent(sessionId)}`);
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        showSuccess(data.licenseKey, data.email);
+                        return;
+                    }
+
+                    // Webhook may not have arrived yet — retry on 404
+                    if (response.status === 404 && attempts < maxAttempts - 1) {
+                        attempts++;
+                        await new Promise(resolve => setTimeout(resolve, retryDelay));
+                        continue;
+                    }
+
+                    const errorData = await response.json().catch(() => ({}));
+                    showError(errorData.hint || "Could not retrieve your license key. Please check your email or contact support.");
+                    return;
+                } catch (err) {
+                    if (attempts < maxAttempts - 1) {
+                        attempts++;
+                        await new Promise(resolve => setTimeout(resolve, retryDelay));
+                        continue;
+                    }
+                    showError("Network error. Please check your connection and refresh the page.");
+                    return;
+                }
+            }
+        }
+
+        function showSuccess(licenseKey, email) {
+            document.getElementById("loading").classList.add("hidden");
+            document.getElementById("success").classList.remove("hidden");
+            document.getElementById("license-key").textContent = licenseKey;
+            if (email) {
+                document.getElementById("email-sent").textContent = `Purchase confirmed for ${email}`;
+            }
+        }
+
+        function showError(message) {
+            document.getElementById("loading").classList.add("hidden");
+            document.getElementById("error").classList.remove("hidden");
+            document.getElementById("error-message").textContent = message;
+        }
+
+        function copyLicenseKey() {
+            const key = document.getElementById("license-key").textContent;
+            navigator.clipboard.writeText(key).then(() => {
+                const btn = document.getElementById("copy-btn");
+                btn.textContent = "Copied!";
+                btn.classList.remove("bg-blue-600", "hover:bg-blue-700");
+                btn.classList.add("bg-green-600");
+                setTimeout(() => {
+                    btn.textContent = "Copy";
+                    btn.classList.remove("bg-green-600");
+                    btn.classList.add("bg-blue-600", "hover:bg-blue-700");
+                }, 2000);
+            });
+        }
+
+        fetchLicense();
+    </script>
+</body>
+</html>

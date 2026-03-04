@@ -1,0 +1,10 @@
+{
+  "name": "owninvoice-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OwnInvoice landing page with license activation functions",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "stripe": "^14.8.0"
+  }
+}
