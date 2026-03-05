@@ -1,5 +1,10 @@
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
 import Stripe from "stripe";
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 function generateLicenseKey() {
   const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
@@ -55,7 +60,7 @@ export default async function handler(req, res) {
   const sessionId = session.id;
 
   // Idempotency check
-  const existingSessionKey = await kv.get(`session_${sessionId}`);
+  const existingSessionKey = await redis.get(`session_${sessionId}`);
   if (existingSessionKey) {
     return res.json({ received: true, duplicate: true });
   }
@@ -65,7 +70,7 @@ export default async function handler(req, res) {
   let attempts = 0;
   do {
     licenseKey = generateLicenseKey();
-    const existing = await kv.get(licenseKey);
+    const existing = await redis.get(licenseKey);
     if (!existing) break;
     attempts++;
   } while (attempts < 5);
@@ -83,12 +88,13 @@ export default async function handler(req, res) {
     activatedAt: null,
   };
 
-  await kv.set(licenseKey, licenseData);
-  await kv.set(`session_${sessionId}`, licenseKey);
+  await redis.set(licenseKey, JSON.stringify(licenseData));
+  await redis.set(`session_${sessionId}`, licenseKey);
 
-  const existingEmailLicenses = (await kv.get(`email_${customerEmail}`)) || [];
-  existingEmailLicenses.push(licenseKey);
-  await kv.set(`email_${customerEmail}`, existingEmailLicenses);
+  const existingEmailLicenses = (await redis.get(`email_${customerEmail}`)) || [];
+  const emailList = typeof existingEmailLicenses === "string" ? JSON.parse(existingEmailLicenses) : existingEmailLicenses;
+  emailList.push(licenseKey);
+  await redis.set(`email_${customerEmail}`, JSON.stringify(emailList));
 
   console.log(`License generated: ${licenseKey} for ${customerEmail}`);
   return res.json({ received: true, licenseKey });

@@ -1,4 +1,9 @@
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
@@ -28,7 +33,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Invalid license key format" });
   }
 
-  const licenseData = await kv.get(normalizedKey);
+  let licenseData = await redis.get(normalizedKey);
+  if (typeof licenseData === "string") {
+    licenseData = JSON.parse(licenseData);
+  }
 
   if (!licenseData) {
     return res.status(404).json({ error: "License key not found", code: "KEY_NOT_FOUND" });
@@ -38,7 +46,7 @@ export default async function handler(req, res) {
     licenseData.machineId = machineId;
     licenseData.activated = true;
     licenseData.activatedAt = new Date().toISOString();
-    await kv.set(normalizedKey, licenseData);
+    await redis.set(normalizedKey, JSON.stringify(licenseData));
     return res.json({ success: true, message: "License activated successfully", email: licenseData.email });
   }
 

@@ -1,4 +1,9 @@
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
@@ -18,7 +23,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing or invalid session_id" });
   }
 
-  const licenseKey = await kv.get(`session_${sessionId}`);
+  const licenseKey = await redis.get(`session_${sessionId}`);
 
   if (!licenseKey) {
     return res.status(404).json({
@@ -27,7 +32,10 @@ export default async function handler(req, res) {
     });
   }
 
-  const licenseData = await kv.get(licenseKey);
+  let licenseData = await redis.get(licenseKey);
+  if (typeof licenseData === "string") {
+    licenseData = JSON.parse(licenseData);
+  }
 
   return res.json({
     licenseKey,
