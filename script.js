@@ -4,7 +4,7 @@
 
 // Stripe Checkout
 function checkout() {
-  window.location.href = 'https://buy.stripe.com/14A6oH2ogd5Gb6m9PW53O01';
+  window.location.href = 'https://buy.stripe.com/eVqcN51kc4zab6m2nu53O00';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
