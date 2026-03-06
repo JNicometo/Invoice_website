@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Release Notes - OwnInvoice by Grit Software</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .page-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,15,30,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .page-nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .page-nav-logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; color: #fff; }
+    .page-nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .page-nav a.back-link { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .page-nav a.back-link:hover { color: #c8a96e; }
+    .page-content { max-width: 720px; margin: 0 auto; padding: 120px 24px 80px; }
+    .page-title { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 8px; letter-spacing: -1px; }
+    .page-subtitle { font-size: 17px; color: rgba(255,255,255,0.45); margin-bottom: 48px; line-height: 1.6; }
+    .release { margin-bottom: 48px; }
+    .release-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .release-version { font-size: 28px; font-weight: 800; color: #fff; }
+    .release-badge { background: rgba(16,185,129,0.15); color: #10B981; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .release-badge.latest { background: rgba(200,169,110,0.15); color: #c8a96e; }
+    .release-date { font-size: 14px; color: rgba(255,255,255,0.35); }
+    .release-section { margin-bottom: 20px; }
+    .release-section h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .release-section h3.features { color: #10B981; }
+    .release-section h3.improvements { color: #3B82F6; }
+    .release-section h3.fixes { color: #F59E0B; }
+    .release-section ul { list-style: none; margin: 0; padding: 0; }
+    .release-section li { padding: 8px 0 8px 20px; font-size: 14.5px; color: rgba(255,255,255,0.6); line-height: 1.6; border-left: 2px solid rgba(255,255,255,0.06); margin-left: 4px; }
+    .release-section h3.features + ul li { border-left-color: rgba(16,185,129,0.3); }
+    .release-section h3.improvements + ul li { border-left-color: rgba(59,130,246,0.3); }
+    .release-section h3.fixes + ul li { border-left-color: rgba(245,158,11,0.3); }
+    .release-section li strong { color: rgba(255,255,255,0.85); }
+    .release-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 48px 0; }
+    @media (max-width: 768px) { .page-title { font-size: 28px; } .release-version { font-size: 22px; } }
+  </style>
+</head>
+<body>
+  <div class="page-nav">
+    <div class="page-nav-inner">
+      <a href="index.html" class="page-nav-logo"><img src="Logo.png" alt="Logo"><span>OwnInvoice</span></a>
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <h1 class="page-title">Release Notes</h1>
+    <p class="page-subtitle">What's new in OwnInvoice Desktop. We ship monthly bug fixes and quarterly feature updates.</p>
+
+    <div class="release">
+      <div class="release-header">
+        <span class="release-version">v1.0.0</span>
+        <span class="release-badge latest">Latest</span>
+        <span class="release-date">March 2026</span>
+      </div>
+
+      <div class="release-section">
+        <h3 class="features">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Features
+        </h3>
+        <ul>
+          <li><strong>Full Desktop Application</strong> &mdash; Native app for Windows and macOS, runs completely offline</li>
+          <li><strong>Professional Invoicing</strong> &mdash; Create, edit, and manage invoices with customizable line items, discounts, tax, shipping, and adjustments</li>
+          <li><strong>Quotes & Estimates</strong> &mdash; Create proposals and convert accepted quotes directly into invoices</li>
+          <li><strong>Credit Notes</strong> &mdash; Issue refunds and billing corrections linked to specific invoices</li>
+          <li><strong>Client Management</strong> &mdash; Unlimited clients with contact details, multiple addresses, credit limits, and payment terms</li>
+          <li><strong>Saved Items Library</strong> &mdash; Reusable product and service catalog with categories, SKUs, and markup calculation</li>
+          <li><strong>Recurring Invoices</strong> &mdash; Automate weekly, bi-weekly, monthly, quarterly, or yearly billing</li>
+          <li><strong>Payment Reminders</strong> &mdash; Automated and manual email reminders for overdue invoices with customizable templates</li>
+          <li><strong>Reports & Analytics</strong> &mdash; Revenue tracking, monthly charts, client revenue breakdown, and CSV export</li>
+          <li><strong>5 Payment Gateways</strong> &mdash; Stripe, PayPal, Square, GoCardless, and Authorize.Net integration with sandbox mode</li>
+          <li><strong>Email Integration</strong> &mdash; Send invoices and reminders via SMTP with PDF attachments</li>
+          <li><strong>PDF Export</strong> &mdash; Professional PDF generation with customizable templates, fonts, colors, and layouts</li>
+          <li><strong>Batch Operations</strong> &mdash; Select multiple invoices for bulk mark-as-paid, archive, or delete</li>
+          <li><strong>Dashboard</strong> &mdash; Business overview with revenue stats, pending/overdue amounts, and recent invoices</li>
+          <li><strong>Global Search</strong> &mdash; Search across invoices, clients, and items with keyboard shortcut</li>
+          <li><strong>Backup & Restore</strong> &mdash; Automatic scheduled backups with configurable retention and manual backup option</li>
+          <li><strong>Archive System</strong> &mdash; Move old invoices and quotes out of active views with restore capability</li>
+          <li><strong>CSV Import</strong> &mdash; Bulk import clients and saved items from CSV files</li>
+          <li><strong>Customizable Interface</strong> &mdash; Dark mode, color themes, configurable sidebar, and keyboard shortcuts</li>
+          <li><strong>Multiple Database Support</strong> &mdash; SQLite (default), MySQL, PostgreSQL, and SQL Server</li>
+          <li><strong>License Activation</strong> &mdash; Secure license key system with machine-based activation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding: 48px 0 0; border-top: 1px solid rgba(255,255,255,0.08);">
+      <p style="color: rgba(255,255,255,0.3); font-size: 13px;">&copy; 2026 Grit Software. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
