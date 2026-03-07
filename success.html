@@ -110,7 +110,7 @@
       </div>
 
       <!-- Steps -->
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; margin-bottom: 32px;">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; margin-bottom: 24px;">
         <h3 style="font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 16px;">Getting Started</h3>
         <div style="text-align: left; display: flex; flex-direction: column; gap: 12px;">
           <div style="display: flex; gap: 12px; align-items: flex-start;">
@@ -130,6 +130,30 @@
             <span style="color: rgba(255,255,255,0.7); font-size: 15px;">Enter your license key on the activation screen</span>
           </div>
         </div>
+      </div>
+
+      <!-- macOS Note -->
+      <div style="background: rgba(200, 169, 110, 0.06); border: 1px solid rgba(200, 169, 110, 0.2); border-radius: 16px; padding: 28px; margin-bottom: 32px;">
+        <h3 style="font-size: 16px; font-weight: 700; color: #c8a96e; margin-bottom: 12px;">macOS Users: Important First-Time Setup</h3>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 12px;">
+          Since OwnInvoice is downloaded from the web, macOS may show a <strong style="color: rgba(255,255,255,0.8);">"damaged and can't be opened"</strong> message. This is normal for apps outside the Mac App Store. To fix it:
+        </p>
+        <div style="text-align: left; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #c8a96e; font-weight: 700; font-size: 14px;">1.</span>
+            <span style="color: rgba(255,255,255,0.7); font-size: 14px;">Open <strong style="color: rgba(255,255,255,0.85);">Terminal</strong> (search for it in Spotlight)</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="color: #c8a96e; font-weight: 700; font-size: 14px;">2.</span>
+            <span style="color: rgba(255,255,255,0.7); font-size: 14px;">Paste this command and press Enter:</span>
+          </div>
+        </div>
+        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px 16px; font-family: 'Courier New', monospace; font-size: 13px; color: #c8a96e; user-select: all; word-break: break-all;">
+          xattr -cr "/Applications/OwnInvoice Desktop.app"
+        </div>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 10px;">
+          Then open the app normally. You only need to do this once.
+        </p>
       </div>
       <a href="index.html" class="btn btn-primary btn-lg" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: #c8a96e; color: #0a0f1e; font-weight: 700; border-radius: 12px; text-decoration: none; font-size: 16px;">
         Back to Home
