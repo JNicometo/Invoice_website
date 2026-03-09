@@ -4,6 +4,7 @@
   "description": "OwnInvoice by Grit Software - Marketing Website",
   "dependencies": {
     "stripe": "^14.14.0",
-    "@upstash/redis": "^1.28.0"
+    "@upstash/redis": "^1.28.0",
+    "@vercel/analytics": "^1.4.0"
   }
 }
