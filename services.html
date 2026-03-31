@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grit Software Services - Freelance IT, Automations & Development</title>
+  <meta name="description" content="Freelance IT support, workflow automations, custom development, and app customizations for small businesses. No contracts. No overhead. Just results.">
+  <meta property="og:title" content="Grit Software Services - Freelance IT, Automations & Development">
+  <meta property="og:description" content="Freelance IT support, automations, development, and app customizations for small businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gritsoftware.dev/services">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18015709100"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18015709100');
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand: #c8a96e;
+      --brand-light: #d4b97a;
+      --brand-dark: #b8953e;
+      --navy: #0a0f1e;
+      --navy-light: #0e1528;
+      --navy-mid: #141c30;
+      --slate: #1e2740;
+      --emerald: #10B981;
+      --amber: #F59E0B;
+      --violet: #8B5CF6;
+      --cyan: #06B6D4;
+      --white: #FFFFFF;
+      --glass: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.08);
+      --shadow-card: 0 4px 16px rgba(0,0,0,0.2), 0 12px 40px rgba(0,0,0,0.25);
+      --shadow-heavy: 0 8px 32px rgba(0,0,0,0.3), 0 24px 60px rgba(0,0,0,0.35);
+      --glow: 0 0 60px rgba(200, 169, 110, 0.15);
+      --radius: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 24px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: rgba(255,255,255,0.85);
+      background: #0a0f1e;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 15, 30, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 15, 30, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .nav-logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      padding: 7px 16px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .nav-cta {
+      background: var(--brand) !important;
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      padding: 8px 20px !important;
+      margin-left: 8px !important;
+      border-radius: var(--radius-md) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--brand-dark) !important;
+      box-shadow: 0 0 20px rgba(200, 169, 110, 0.3) !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #0a0f1e;
+      font-weight: 700;
+      box-shadow: 0 2px 12px rgba(200, 169, 110, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      box-shadow: 0 4px 24px rgba(200, 169, 110, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .btn-lg {
+      padding: 15px 32px;
+      font-size: 16px;
+      border-radius: var(--radius-lg);
+    }
+
+    /* ---- SECTION HEADERS ---- */
+    .section-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+
+    /* ---- HERO ---- */
+    .services-hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200, 169, 110, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 169, 110, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+    }
+
+    .services-hero::after {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 169, 110, 0.1) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .services-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .services-hero h1 {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+    }
+
+    .services-hero .hero-tagline {
+      font-size: 22px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #c8a96e, #e8d5a8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .services-hero .hero-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    /* ---- SERVICE DETAIL SECTIONS ---- */
+    .service-detail {
+      padding: 100px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .service-detail:nth-child(odd) {
+      background: #0e1528;
+    }
+
+    .service-detail:nth-child(even) {
+      background: #0a0f1e;
+    }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .service-detail:nth-child(even) .service-detail-grid {
+      direction: rtl;
+    }
+
+    .service-detail:nth-child(even) .service-detail-grid > * {
+      direction: ltr;
+    }
+
+    .service-detail-icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .service-detail-icon-box {
+      width: 200px;
+      height: 200px;
+      border-radius: var(--radius-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .service-detail-icon-box::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-2xl);
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(200,169,110,0.3), transparent);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      pointer-events: none;
+    }
+
+    .service-detail-content h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .service-detail-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .service-detail-content p strong {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .service-list {
+      list-style: none;
+      margin: 24px 0 32px;
+      padding: 0;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .service-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .how-it-works {
+      padding: 110px 0;
+      background: #0e1528;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+
+    .how-it-works > .container > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.45);
+      max-width: 500px;
+      margin: 0 auto 60px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .step-card {
+      padding: 40px 32px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(200,169,110,0.3);
+    }
+
+    .step-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ---- CTA SECTION ---- */
+    .services-cta-section {
+      padding: 110px 0;
+      background: #0a0f1e;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--navy-mid);
+      border-radius: var(--radius-2xl);
+      padding: 60px 48px;
+      border: 1px solid rgba(200,169,110,0.15);
+      box-shadow: var(--shadow-heavy), var(--glow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200, 169, 110, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 169, 110, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .cta-card h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .cta-card > p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .cta-emails {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .cta-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border-radius: var(--radius-lg);
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-email-btn.primary {
+      background: var(--brand);
+      color: var(--navy);
+      font-weight: 700;
+      box-shadow: 0 2px 12px rgba(200,169,110,0.3);
+    }
+
+    .cta-email-btn.primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(200,169,110,0.4);
+    }
+
+    .cta-email-btn.secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cta-email-btn.secondary:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .cta-note {
+      font-size: 14px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 20px;
+      position: relative;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 48px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-brand-logo {
+      width: 180px;
+      margin-bottom: 14px;
+      border-radius: 6px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.4);
+      margin-top: 10px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 56px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      padding: 4px 0;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ---- ANIMATIONS ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1024px) {
+      .services-hero h1 { font-size: 42px; }
+      .service-detail-grid { grid-template-columns: 1fr; gap: 48px; }
+      .service-detail:nth-child(even) .service-detail-grid { direction: ltr; }
+      .service-detail-icon-wrap { order: -1; }
+      .steps-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (max-width: 768px) {
+      .services-hero { padding: 130px 0 80px; }
+      .services-hero h1 { font-size: 32px; letter-spacing: -1px; }
+      .services-hero .hero-tagline { font-size: 18px; }
+      .services-hero .hero-desc { font-size: 16px; }
+      .service-detail { padding: 72px 0; }
+      .service-detail-content h2 { font-size: 28px; }
+      .service-detail-icon-box { width: 150px; height: 150px; }
+      .how-it-works h2 { font-size: 28px; }
+      .cta-card { padding: 44px 28px; }
+      .cta-card h2 { font-size: 26px; }
+      .cta-emails { flex-direction: column; align-items: center; }
+
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--glass-border);
+        gap: 4px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 16px; width: 100%; }
+      .nav-cta { text-align: center; margin-top: 8px; margin-left: 0 !important; }
+      .footer-nav { flex-direction: column; gap: 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .services-hero h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="Logo.png" alt="Grit Software" class="nav-logo-img">
+        <span class="nav-logo-text">Grit Software</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/owninvoice">OwnInvoice</a>
+        <a href="/services" class="active">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="mailto:sales@gritsoftware.dev" class="nav-cta">Get a Quote</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="services-hero">
+    <div class="services-hero-inner">
+      <span class="section-label">Grit Software Services</span>
+      <h1>Available for Hire</h1>
+      <p class="hero-tagline">Freelance tech work for small businesses</p>
+      <p class="hero-desc">
+        Need IT help, a custom tool, or tedious workflows automated? We work directly with small businesses and solo operators &mdash; no contracts, no overhead, just results.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:sales@gritsoftware.dev" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get a Quote
+        </a>
+        <a href="#services-list" class="btn btn-ghost btn-lg">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SERVICE DETAILS
+       ============================ -->
+  <div id="services-list">
+
+    <!-- IT Support -->
+    <section class="service-detail">
+      <div class="container">
+        <div class="service-detail-grid reveal">
+          <div class="service-detail-content">
+            <span class="section-label">Service</span>
+            <h2>IT Support</h2>
+            <p>
+              <strong>Straightforward tech help without the enterprise price tag.</strong>
+            </p>
+            <p>
+              From setting up new workstations to troubleshooting network issues, we handle the technical headaches so you can focus on running your business.
+            </p>
+            <ul class="service-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Computer setup, maintenance &amp; troubleshooting
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Network configuration &amp; Wi-Fi optimization
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Software installation &amp; updates
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Data backup &amp; recovery solutions
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Remote &amp; on-site support available
+              </li>
+            </ul>
+            <a href="mailto:sales@gritsoftware.dev?subject=IT Support Inquiry" class="btn btn-primary">Get Help &rarr;</a>
+          </div>
+          <div class="service-detail-icon-wrap">
+            <div class="service-detail-icon-box" style="background: rgba(6,182,212,0.08);">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Automations -->
+    <section class="service-detail">
+      <div class="container">
+        <div class="service-detail-grid reveal">
+          <div class="service-detail-content">
+            <span class="section-label">Service</span>
+            <h2>Automations</h2>
+            <p>
+              <strong>Stop doing the same thing twice.</strong>
+            </p>
+            <p>
+              We build scripts, integrations, and workflows that eliminate repetitive manual tasks. If you're copy-pasting, re-entering data, or running the same steps every day &mdash; we can automate it.
+            </p>
+            <ul class="service-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Spreadsheet &amp; data entry automation
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Email &amp; notification workflows
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                File organization &amp; backup scripts
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                API integrations between tools you already use
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Scheduled reports &amp; recurring tasks
+              </li>
+            </ul>
+            <a href="mailto:sales@gritsoftware.dev?subject=Automation Inquiry" class="btn btn-primary">Automate It &rarr;</a>
+          </div>
+          <div class="service-detail-icon-wrap">
+            <div class="service-detail-icon-box" style="background: rgba(245,158,11,0.08);">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Development -->
+    <section class="service-detail">
+      <div class="container">
+        <div class="service-detail-grid reveal">
+          <div class="service-detail-content">
+            <span class="section-label">Service</span>
+            <h2>Development</h2>
+            <p>
+              <strong>Custom software built around how you actually work.</strong>
+            </p>
+            <p>
+              Need a tool that doesn't exist yet? We build desktop apps, web tools, and internal software from scratch &mdash; designed for your exact workflow, not a one-size-fits-all template.
+            </p>
+            <ul class="service-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Desktop applications (Windows &amp; macOS)
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Web apps &amp; dashboards
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Internal business tools &amp; portals
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Database design &amp; data management
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full project from concept to delivery
+              </li>
+            </ul>
+            <a href="mailto:sales@gritsoftware.dev?subject=Development Inquiry" class="btn btn-primary">Start a Project &rarr;</a>
+          </div>
+          <div class="service-detail-icon-wrap">
+            <div class="service-detail-icon-box" style="background: rgba(139,92,246,0.08);">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Customizations -->
+    <section class="service-detail">
+      <div class="container">
+        <div class="service-detail-grid reveal">
+          <div class="service-detail-content">
+            <span class="section-label">Service</span>
+            <h2>App Customizations</h2>
+            <p>
+              <strong>Make your existing tools work the way you need them to.</strong>
+            </p>
+            <p>
+              Already using software that's almost right? We can modify, extend, and tailor existing applications &mdash; adding features, changing workflows, or integrating with other systems.
+            </p>
+            <ul class="service-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Feature additions &amp; modifications
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                UI/UX improvements &amp; redesigns
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Third-party integrations
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom reports &amp; export formats
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                OwnInvoice customizations &amp; white-labeling
+              </li>
+            </ul>
+            <a href="mailto:sales@gritsoftware.dev?subject=App Customization Inquiry" class="btn btn-primary">Customize It &rarr;</a>
+          </div>
+          <div class="service-detail-icon-wrap">
+            <div class="service-detail-icon-box" style="background: rgba(16,185,129,0.08);">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================
+       HOW IT WORKS
+       ============================ -->
+  <section class="how-it-works">
+    <div class="container">
+      <span class="section-label">How It Works</span>
+      <h2>Simple. Direct. No BS.</h2>
+      <p>No account managers, no ticket queues, no 6-week timelines for a simple fix.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Tell Us What You Need</h3>
+          <p>Send an email describing your problem or project. Be as detailed or vague as you want &mdash; we'll figure it out together.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Get a Clear Quote</h3>
+          <p>We'll respond with a straightforward scope, timeline, and price. No hidden fees. No surprise invoices.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>We Build It</h3>
+          <p>We get to work and keep you updated. You get the finished product, the source files, and full ownership of everything we create.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CTA
+       ============================ -->
+  <section class="services-cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Ready to Get Started?</h2>
+        <p>Describe what you need and we'll get back to you with a clear plan and price. No commitment required.</p>
+        <div class="cta-emails">
+          <a href="mailto:sales@gritsoftware.dev" class="cta-email-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            sales@gritsoftware.dev
+          </a>
+          <a href="mailto:support@gritsoftware.dev" class="cta-email-btn secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            support@gritsoftware.dev
+          </a>
+        </div>
+        <p class="cta-note">No contracts. No minimums. Just tell us what you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="banner.png" alt="Grit Software" class="footer-brand-logo">
+          <p>Reliable software and freelance tech services for real businesses.</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="/owninvoice">OwnInvoice</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#services-list">All Services</a>
+            <a href="mailto:sales@gritsoftware.dev">Get a Quote</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+            <a href="mailto:support@gritsoftware.dev">Support</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="refund.html">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grit Software. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navigation
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          navToggle.classList.toggle('active');
+          const spans = navToggle.querySelectorAll('span');
+          if (navToggle.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+          } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+          }
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+          });
+        });
+      }
+
+      // Navbar Scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Scroll Reveal
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

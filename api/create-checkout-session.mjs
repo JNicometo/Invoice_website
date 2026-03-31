@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       ],
       mode: "payment",
       success_url: `${domain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${domain}/index.html#pricing`,
+      cancel_url: `${domain}/owninvoice#pricing`,
       allow_promotion_codes: true,
     });
 

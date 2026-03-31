@@ -32,7 +32,7 @@ app.post('/create-checkout-session', async (req, res) => {
       ],
       mode: 'payment',
       success_url: `${DOMAIN}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${DOMAIN}/index.html#pricing`,
+      cancel_url: `${DOMAIN}/owninvoice#pricing`,
       allow_promotion_codes: true,
     });
 
