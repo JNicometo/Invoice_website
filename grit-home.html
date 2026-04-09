@@ -720,6 +720,47 @@
       z-index: 1;
     }
 
+    .trial-downloads {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .trial-downloads p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+
+    .trial-downloads .dl-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .trial-downloads .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .trial-downloads .dl-btn:hover {
+      background: rgba(200,169,110,0.12);
+      border-color: rgba(200,169,110,0.3);
+      color: var(--brand);
+    }
+
     /* ---- SERVICES / FREELANCING ---- */
     .services {
       padding: 120px 0;
@@ -968,6 +1009,19 @@
           <h3>OwnInvoice</h3>
           <p>Professional desktop invoicing for small businesses. Create invoices, quotes, track payments, manage clients, and send reminders &mdash; all offline, all yours.</p>
           <a href="/owninvoice" class="btn btn-primary">See OwnInvoice &rarr;</a>
+          <div class="trial-downloads">
+            <p>Download the free 7-day trial &mdash; no signup required.</p>
+            <div class="dl-buttons">
+              <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-Setup.exe" class="dl-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Windows
+              </a>
+              <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-arm64.dmg" class="dl-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                macOS
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="coming-soon-line">More products coming soon.</div>
