@@ -856,6 +856,55 @@
       z-index: 1;
     }
 
+    .service-card-featured {
+      grid-column: 1 / -1;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .service-pricing {
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .service-pricing-header {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .service-pricing-tags {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .service-price-tag {
+      background: rgba(200,169,110,0.1);
+      border: 1px solid rgba(200,169,110,0.25);
+      border-radius: 8px;
+      padding: 8px 16px;
+      text-align: center;
+    }
+
+    .service-price-amount {
+      display: block;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .service-price-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
     .services-cta {
       text-align: center;
       margin-top: 52px;
@@ -1044,28 +1093,48 @@
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>IT Support</h3>
-          <p>Troubleshooting, setup, and maintenance for small business systems and networks.</p>
+          <p>Remote IT help, troubleshooting, and computer setup for small businesses.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon" style="background: rgba(245,158,11,0.12);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
           </div>
           <h3>Automations</h3>
-          <p>Streamline repetitive tasks with scripts, integrations, and workflow automation.</p>
+          <p>Workflow automations using tools like Zapier or custom scripts.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon" style="background: rgba(139,92,246,0.12);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3>Development</h3>
-          <p>Custom desktop apps, web tools, and internal software built to your exact needs.</p>
+          <p>Custom software and app development built to your exact needs.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon" style="background: rgba(16,185,129,0.12);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <h3>App Customizations</h3>
-          <p>Modifications, feature additions, and tailored configurations for existing software.</p>
+          <p>Modifications and custom features for existing software.</p>
+        </div>
+        <div class="service-card service-card-featured reveal">
+          <div class="service-icon" style="background: rgba(236,72,153,0.12);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Website Design &amp; Management</h3>
+          <p>Custom website design and development. Monthly management and hosting available &mdash; including updates, domain management, and keeping your site running.</p>
+          <div class="service-pricing">
+            <div class="service-pricing-header">Prices starting at</div>
+            <div class="service-pricing-tags">
+              <div class="service-price-tag">
+                <span class="service-price-amount">$500</span>
+                <span class="service-price-label">to build</span>
+              </div>
+              <div class="service-price-tag">
+                <span class="service-price-amount">$200</span>
+                <span class="service-price-label">/mo to manage</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="services-cta">
