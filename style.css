@@ -1298,6 +1298,7 @@ img { max-width: 100%; display: block; }
   .download-buttons { flex-direction: column; align-items: center; }
   .download-buttons .btn { width: 100%; max-width: 300px; justify-content: center; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  #contact-form > div:first-child { flex-direction: column; }
 
   .nav-toggle { display: flex; }
   .nav-links {
