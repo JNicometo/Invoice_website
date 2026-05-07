@@ -586,6 +586,93 @@
       color: rgba(255,255,255,0.4);
     }
 
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+      position: relative;
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--brand);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      padding: 14px 32px;
+      background: var(--brand);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 12px rgba(200,169,110,0.3);
+    }
+
+    .contact-form button:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(200,169,110,0.4);
+    }
+
+    .contact-form button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-status {
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.3);
+      color: #10B981;
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: #EF4444;
+    }
+
     /* ---- FOOTER ---- */
     .footer {
       background: var(--navy);
@@ -1213,27 +1300,25 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-card">
-        <h2>Let's Talk</h2>
-        <p>Have a question, feature request, or just want to say hi? We'd love to hear from you.</p>
+        <h2>Get In Touch</h2>
+        <p>Have a question, need a quote, or want to talk about a project? Send us a message and we'll get back to you within 24 hours.</p>
 
-        <div class="contact-methods">
-          <a href="mailto:support@gritsoftware.dev" class="contact-method">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/sales@gritsoftware.dev" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <input type="text" name="_subject" placeholder="What's this about? (e.g. Website quote, OwnInvoice question)">
+          <textarea name="message" placeholder="Tell us what you need..." required></textarea>
+          <button type="submit" id="contactBtn">Send Message</button>
+        </form>
+        <div class="form-status" id="formStatus"></div>
+
+        <div class="contact-methods" style="margin-top: 24px;">
+          <a href="mailto:sales@gritsoftware.dev" class="contact-method">
             <div class="contact-method-icon" style="background: rgba(200,169,110,0.12);">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <div class="contact-method-text">
-              <strong>Email Us</strong>
-              <span>support@gritsoftware.dev</span>
-            </div>
-          </a>
-
-
-          <a href="mailto:sales@gritsoftware.dev" class="contact-method">
-            <div class="contact-method-icon" style="background: rgba(16,185,129,0.12);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-            </div>
-            <div class="contact-method-text">
-              <strong>Sales &amp; Inquiries</strong>
+              <strong>Or email directly</strong>
               <span>sales@gritsoftware.dev</span>
             </div>
           </a>
@@ -1355,6 +1440,41 @@
           }
         });
       });
+
+      // Contact form submission
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('contactBtn');
+      const status = document.getElementById('formStatus');
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          status.className = 'form-status';
+          status.style.display = 'none';
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              status.className = 'form-status success';
+              status.textContent = 'Message sent! We\'ll get back to you within 24 hours.';
+              status.style.display = 'block';
+              form.reset();
+            } else {
+              throw new Error('Failed');
+            }
+          } catch (err) {
+            status.className = 'form-status error';
+            status.textContent = 'Something went wrong. Try emailing sales@gritsoftware.dev directly.';
+            status.style.display = 'block';
+          }
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+        });
+      }
 
     });
   </script>
