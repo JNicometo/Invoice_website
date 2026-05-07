@@ -1303,10 +1303,13 @@
         <h2>Get In Touch</h2>
         <p>Have a question, need a quote, or want to talk about a project? Send us a message and we'll get back to you within 24 hours.</p>
 
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/sales@gritsoftware.dev" method="POST">
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3e86fe22-265a-48e3-a916-e190b33e4c28">
+          <input type="hidden" name="subject" value="New message from gritsoftware.dev">
+          <input type="hidden" name="from_name" value="Grit Software Contact Form">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
-          <input type="text" name="_subject" placeholder="What's this about? (e.g. Website quote, OwnInvoice question)">
+          <input type="text" name="topic" placeholder="What's this about? (e.g. Website quote, OwnInvoice question)">
           <textarea name="message" placeholder="Tell us what you need..." required></textarea>
           <button type="submit" id="contactBtn">Send Message</button>
         </form>
