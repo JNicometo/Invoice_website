@@ -83,10 +83,17 @@
           </button>
           <a href="#pricing" class="btn btn-ghost btn-lg">See Pricing</a>
         </div>
-        <div style="margin-top: 14px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 13px; color: rgba(255,255,255,0.4);">Or try free for 7 days:</span>
-          <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-Setup.exe" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px;">Windows</a>
-          <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-arm64.dmg" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px;">macOS</a>
+        <div style="margin-top: 14px; text-align: center;">
+          <span style="font-size: 13px; color: rgba(255,255,255,0.4); display: block; margin-bottom: 8px;">Or try free for 7 days:</span>
+          <form id="heroTrialGate" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <input type="text" name="name" placeholder="Name" required style="padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none; width: 110px;">
+            <input type="email" name="email" placeholder="Email" required style="padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none; width: 160px;">
+            <button type="submit" style="padding: 8px 16px; background: rgba(255,255,255,0.1); color: #fff; font-weight: 600; font-size: 13px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; font-family: inherit;">Get Trial</button>
+          </form>
+          <div id="heroTrialLinks" style="display: none; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center;">
+            <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-Setup.exe" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px;">Download Windows</a>
+            <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-arm64.dmg" style="font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px;">Download macOS</a>
+          </div>
         </div>
         <div class="hero-trust">
           <div class="trust-item">
@@ -549,8 +556,13 @@
         </div>
         <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 8px;">Works on Windows &amp; macOS. One license covers both platforms.</p>
         <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
-          <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 10px;">Not ready to buy? Try free for 7 days &mdash; no signup required.</p>
-          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 10px;">Not ready to buy? Try free for 7 days:</p>
+          <form id="ctaTrialGate" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
+            <input type="text" name="name" placeholder="Name" required style="padding: 9px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none; width: 120px;">
+            <input type="email" name="email" placeholder="Email" required style="padding: 9px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none; width: 170px;">
+            <button type="submit" style="padding: 9px 18px; background: rgba(255,255,255,0.1); color: #fff; font-weight: 600; font-size: 13px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; font-family: inherit;">Get Trial</button>
+          </form>
+          <div id="ctaTrialLinks" style="display: none; gap: 10px; justify-content: center; flex-wrap: wrap;">
             <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-Setup.exe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600; border-radius: 8px; text-decoration: none;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Windows Trial

@@ -1158,8 +1158,15 @@
           <p>Professional desktop invoicing for small businesses. Create invoices, quotes, track payments, manage clients, and send reminders &mdash; all offline, all yours.</p>
           <a href="/owninvoice" class="btn btn-primary">See OwnInvoice &rarr;</a>
           <div class="trial-downloads">
-            <p>Download the free 7-day trial &mdash; no signup required.</p>
-            <div class="dl-buttons">
+            <p>Download the free 7-day trial:</p>
+            <!-- Gate form -->
+            <form id="trialGateForm" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+              <input type="text" name="name" placeholder="Name" required style="flex: 1; min-width: 100px; padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none;">
+              <input type="email" name="email" placeholder="Email" required style="flex: 1.5; min-width: 140px; padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #fff; font-size: 13px; font-family: inherit; outline: none;">
+              <button type="submit" style="padding: 10px 18px; background: var(--brand); color: var(--navy); font-weight: 700; font-size: 13px; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; white-space: nowrap;">Get Trial</button>
+            </form>
+            <!-- Hidden until form submitted -->
+            <div class="dl-buttons" id="trialLinks" style="display: none;">
               <a href="https://github.com/JNicometo/OwnInvoice/releases/download/v1.0.0/OwnInvoice.Desktop-1.0.0-Setup.exe" class="dl-btn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Windows
@@ -1443,6 +1450,34 @@
           }
         });
       });
+
+      // Trial download gate
+      const trialForm = document.getElementById('trialGateForm');
+      if (trialForm) {
+        trialForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const name = trialForm.querySelector('[name="name"]').value;
+          const email = trialForm.querySelector('[name="email"]').value;
+          // Send lead to Web3Forms
+          try {
+            await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                access_key: '3e86fe22-265a-48e3-a916-e190b33e4c28',
+                subject: 'OwnInvoice Trial Download',
+                from_name: 'Trial Download Gate',
+                name: name,
+                email: email,
+                message: name + ' (' + email + ') requested the OwnInvoice trial download.'
+              })
+            });
+          } catch (err) {}
+          // Show download links regardless
+          trialForm.style.display = 'none';
+          document.getElementById('trialLinks').style.display = 'flex';
+        });
+      }
 
       // Contact form submission
       const form = document.getElementById('contactForm');

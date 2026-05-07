@@ -113,21 +113,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // --- Contact Form ---
+  // --- Contact Form (Web3Forms) ---
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const subject = document.getElementById('contact-subject').value;
       const message = document.getElementById('contact-message').value.trim();
-
-      const mailSubject = encodeURIComponent(`[${subject}] from ${name}`);
-      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:support@gritsoftware.dev?subject=${mailSubject}&body=${mailBody}`;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: '3e86fe22-265a-48e3-a916-e190b33e4c28',
+            subject: '[' + subject + '] from ' + name,
+            from_name: 'OwnInvoice Contact Form',
+            name: name,
+            email: email,
+            message: message
+          })
+        });
+        if (res.ok) {
+          btn.textContent = 'Sent!';
+          btn.style.background = '#10B981';
+          contactForm.reset();
+          setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 3000);
+        } else { throw new Error('Failed'); }
+      } catch (err) {
+        btn.textContent = 'Error - try again';
+        btn.style.background = '#EF4444';
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; btn.disabled = false; }, 3000);
+      }
     });
   }
+
+  // --- Trial Download Gates ---
+  function setupTrialGate(formId, linksId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: '3e86fe22-265a-48e3-a916-e190b33e4c28',
+            subject: 'OwnInvoice Trial Download',
+            from_name: 'Trial Download Gate',
+            name: name,
+            email: email,
+            message: name + ' (' + email + ') requested the OwnInvoice trial.'
+          })
+        });
+      } catch (err) {}
+      form.style.display = 'none';
+      var links = document.getElementById(linksId);
+      if (links) links.style.display = 'flex';
+    });
+  }
+  setupTrialGate('heroTrialGate', 'heroTrialLinks');
+  setupTrialGate('ctaTrialGate', 'ctaTrialLinks');
 
   // --- Smooth Scroll ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
