@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design for Small Businesses | Grit Software</title>
+  <meta name="description" content="Professional web design for small businesses. Custom-built websites starting at $49/month. No setup fees, no contracts, no DIY builders. Built, hosted, and maintained by Grit Software.">
+  <meta property="og:title" content="Web Design for Small Businesses | Grit Software">
+  <meta property="og:description" content="Professional websites built, hosted, and maintained for less than the cost of an agency. Plans from $49/month.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gritsoftware.dev/services/web-design">
+  <meta name="keywords" content="small business web design, custom website monthly, web design subscription, affordable web design, website management service">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon-192.png">
+  <link rel="canonical" href="https://gritsoftware.dev/services/web-design">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18015709100"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18015709100');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Design for Small Businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Grit Software",
+      "url": "https://gritsoftware.dev"
+    },
+    "description": "Professional web design and management for small businesses. Custom-built websites with hosting, SSL, and ongoing maintenance included.",
+    "url": "https://gritsoftware.dev/services/web-design",
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Design Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "description": "Hosting, domain management, security updates, and basic monthly edits.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "49.00",
+            "priceCurrency": "USD",
+            "unitText": "MONTH"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Growth",
+          "description": "Custom 5-page website build with hosting, monthly updates, basic SEO, and priority support.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "189.00",
+            "priceCurrency": "USD",
+            "unitText": "MONTH"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "description": "Custom 10-page website build with weekly updates, full SEO, blog management, and monthly strategy call.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "379.00",
+            "priceCurrency": "USD",
+            "unitText": "MONTH"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand: #c8a96e;
+      --brand-light: #d4b97a;
+      --brand-dark: #b8953e;
+      --navy: #0a0f1e;
+      --navy-light: #0e1528;
+      --navy-mid: #141c30;
+      --slate: #1e2740;
+      --emerald: #10B981;
+      --amber: #F59E0B;
+      --violet: #8B5CF6;
+      --cyan: #06B6D4;
+      --rose: #EC4899;
+      --white: #FFFFFF;
+      --glass: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.08);
+      --shadow-card: 0 4px 16px rgba(0,0,0,0.2), 0 12px 40px rgba(0,0,0,0.25);
+      --shadow-heavy: 0 8px 32px rgba(0,0,0,0.3), 0 24px 60px rgba(0,0,0,0.35);
+      --glow: 0 0 60px rgba(200, 169, 110, 0.15);
+      --radius: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 24px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: rgba(255,255,255,0.85);
+      background: #0a0f1e;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- NAVBAR ---- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 15, 30, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 15, 30, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-logo-text {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--brand) !important;
+      color: var(--navy) !important;
+      padding: 8px 20px !important;
+      border-radius: var(--radius) !important;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      transition: all 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--brand-light) !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: var(--navy);
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(200, 169, 110, 0.3);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.3);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 16px;
+      border-radius: var(--radius-md);
+    }
+
+    /* ---- SECTION LABEL ---- */
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    /* ---- REVEAL ANIMATION ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      background: linear-gradient(180deg, #0e1528 0%, #0a0f1e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ---- PROBLEM ---- */
+    .problem {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .problem-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+
+    .problem-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .problem-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .how-it-works {
+      padding: 100px 0;
+      background: var(--navy-light);
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .how-it-works > .container > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 48px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(200, 169, 110, 0.12);
+      color: var(--brand);
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .step-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ---- INCLUDED ---- */
+    .included {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+
+    .included h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .included > .container > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+    }
+
+    .included-item svg {
+      flex-shrink: 0;
+    }
+
+    .included-item span {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ---- PRICING ---- */
+    .pricing {
+      padding: 100px 0;
+      background: var(--navy-light);
+    }
+
+    .pricing h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .pricing > .container > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      background: rgba(200,169,110,0.06);
+      border: 1px solid rgba(200,169,110,0.3);
+      box-shadow: 0 0 40px rgba(200,169,110,0.08);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-tier {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .pricing-period {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 2.2;
+      margin-bottom: 24px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pricing-features li svg {
+      flex-shrink: 0;
+    }
+
+    .pricing-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    /* ---- PORTFOLIO ---- */
+    .portfolio {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+
+    .portfolio h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .portfolio > .container > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .portfolio-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .portfolio-card-text h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .portfolio-card-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-card-text a {
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .portfolio-card-text a:hover {
+      color: var(--brand-light);
+    }
+
+    /* ---- FAQ ---- */
+    .faq {
+      padding: 100px 0;
+      background: var(--navy-light);
+    }
+
+    .faq h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+    }
+
+    .faq-question span {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .faq-question svg {
+      flex-shrink: 0;
+      color: rgba(255,255,255,0.3);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 0 24px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+
+    /* ---- CTA ---- */
+    .final-cta {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, rgba(200,169,110,0.02) 100%);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: var(--radius-2xl);
+      padding: 64px 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-card h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .cta-card > p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-card .btn {
+      margin-bottom: 16px;
+    }
+
+    .cta-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: #070b16;
+      padding: 64px 0 32px;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-brand-logo {
+      height: 28px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 64px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--glass-border);
+      padding-top: 24px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 15, 30, 0.98);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+
+      .hero { padding: 130px 0 80px; }
+      .hero h1 { font-size: 32px; }
+      .hero-sub { font-size: 16px; }
+
+      .problem-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
+
+      .portfolio-card {
+        flex-direction: column;
+        padding: 32px;
+        text-align: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+
+      .cta-card {
+        padding: 40px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 26px; }
+      .pricing-amount { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="/Logo.png" alt="Grit Software" class="nav-logo-img">
+        <span class="nav-logo-text">Grit Software</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/owninvoice">OwnInvoice</a>
+        <a href="/services" class="active">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="mailto:sales@gritsoftware.dev" class="nav-cta">Get a Quote</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="hero">
+    <div class="container">
+      <span class="section-label">Web Design</span>
+      <h1>Professional websites for small businesses. Built, hosted, and maintained for less than the cost of an agency.</h1>
+      <p class="hero-sub">You get a custom website, hosting, SSL, and ongoing updates in one monthly plan. No upfront build fees on annual plans.</p>
+      <div class="hero-ctas">
+        <a href="mailto:sales@gritsoftware.dev?subject=Web Design Inquiry" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Schedule a 15-Minute Call
+        </a>
+        <a href="#pricing" class="btn btn-ghost btn-lg">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PROBLEM STATEMENT
+       ============================ -->
+  <section class="problem">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;" class="reveal">
+        <span class="section-label">The Problem</span>
+        <h2 style="font-size: 34px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; margin-bottom: 12px;">Getting a website shouldn't be this hard</h2>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card reveal">
+          <h3>DIY builders waste your time</h3>
+          <p>Squarespace and Wix look cheap until you spend 40 hours dragging boxes around and still end up with a site that looks like everyone else's.</p>
+        </div>
+        <div class="problem-card reveal">
+          <h3>Agencies charge $5,000&ndash;$15,000 upfront</h3>
+          <p>Plus monthly retainers, change request fees, and meetings about meetings. Most small businesses don't need that overhead.</p>
+        </div>
+        <div class="problem-card reveal">
+          <h3>Freelancers disappear after launch</h3>
+          <p>You get a great site on day one. Six months later you need an update and they're booked, gone, or charging you again from scratch.</p>
+        </div>
+        <div class="problem-card reveal">
+          <h3>You shouldn't need a tech background</h3>
+          <p>DNS records, SSL certificates, hosting providers, CMS updates &mdash; you have a business to run. Someone else should handle this.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       HOW IT WORKS
+       ============================ -->
+  <section class="how-it-works">
+    <div class="container">
+      <span class="section-label">How It Works</span>
+      <h2>Three steps. No nonsense.</h2>
+      <p>From first contact to live site in 2&ndash;3 weeks.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Tell Us What You Need</h3>
+          <p>Send an email or book a 15-minute call. Tell us about your business, what you want the site to do, and any examples you like. That's it.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>We Design and Build</h3>
+          <p>We handle everything: design, development, copywriting assistance, mobile optimization. You review and give feedback. Typical turnaround is 2&ndash;3 weeks.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>We Host and Maintain</h3>
+          <p>Your site goes live on fast, secure hosting. We handle updates, edits, SSL, backups, and anything else that comes up. You just run your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       WHAT'S INCLUDED
+       ============================ -->
+  <section class="included">
+    <div class="container">
+      <span class="section-label" style="text-align: center; display: block;">What You Get</span>
+      <h2>Everything you need. Nothing you don't.</h2>
+      <p>Every plan includes the fundamentals. No add-on fees for basics.</p>
+      <div class="included-grid">
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Custom design tailored to your business</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Hosting and SSL certificates included</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Domain management</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Ongoing edits and content updates</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Basic SEO setup</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Email support</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Mobile-responsive on all devices</span>
+        </div>
+        <div class="included-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Fast-loading performance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PRICING
+       ============================ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <span class="section-label" style="text-align: center; display: block;">Pricing</span>
+      <h2>Simple plans. No surprises.</h2>
+      <p>Pick a plan that fits. No setup fees on annual commitments.</p>
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-amount">$49</div>
+          <div class="pricing-period">/month</div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Hosting &amp; domain management
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              SSL certificate
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Security updates
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic monthly edits
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Email support
+            </li>
+          </ul>
+          <a href="mailto:sales@gritsoftware.dev?subject=Starter Web Design Plan" class="btn btn-ghost" style="font-size: 14px;">Get Started</a>
+          <div class="pricing-note">No build included &mdash; bring your existing site</div>
+        </div>
+        <!-- Growth -->
+        <div class="pricing-card featured reveal">
+          <span class="pricing-badge">Most Popular</span>
+          <div class="pricing-tier">Growth</div>
+          <div class="pricing-amount">$189</div>
+          <div class="pricing-period">/month</div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom 5-page website build
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Hosting, domain &amp; SSL
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Monthly content updates
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic SEO &amp; analytics
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority support
+            </li>
+          </ul>
+          <a href="mailto:sales@gritsoftware.dev?subject=Growth Web Design Plan" class="btn btn-primary" style="font-size: 14px;">Get Started</a>
+          <div class="pricing-note">12-month commitment &bull; build included</div>
+        </div>
+        <!-- Pro -->
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-amount">$379</div>
+          <div class="pricing-period">/month</div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom 10-page website build
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Hosting, domain &amp; SSL
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Weekly content updates
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Full SEO &amp; blog management
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Monthly strategy call
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority support
+            </li>
+          </ul>
+          <a href="mailto:sales@gritsoftware.dev?subject=Pro Web Design Plan" class="btn btn-ghost" style="font-size: 14px;">Get Started</a>
+          <div class="pricing-note">12-month commitment &bull; build included</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PORTFOLIO / PROOF
+       ============================ -->
+  <section class="portfolio">
+    <div class="container">
+      <span class="section-label" style="text-align: center; display: block;">Our Work</span>
+      <h2>Built by us. Judge for yourself.</h2>
+      <p>Every Grit Software property is designed and built in-house.</p>
+      <div class="portfolio-card reveal">
+        <div style="flex-shrink: 0;">
+          <div style="width: 80px; height: 80px; background: rgba(200,169,110,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+        </div>
+        <div class="portfolio-card-text">
+          <h3>gritsoftware.dev</h3>
+          <p>Our own site &mdash; fast, clean, and built with the same process we use for clients. Custom HTML/CSS, optimized for speed and SEO, hosted on Vercel.</p>
+          <a href="/owninvoice">See the OwnInvoice product page &rarr;</a>
+        </div>
+      </div>
+      <p style="text-align: center; color: rgba(255,255,255,0.3); font-size: 14px; margin-top: 32px;">Client case studies coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ============================
+       FAQ
+       ============================ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <span class="section-label" style="text-align: center; display: block;">FAQ</span>
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does a build take?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>2&ndash;3 weeks for most sites. Complex builds with custom functionality may take longer. We'll give you a timeline before we start.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What if I cancel?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Your site goes offline at the end of your billing period. You keep your domain and all content &mdash; we'll hand over everything so you can move elsewhere if you choose.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who owns the domain?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>You do. The domain is registered in your name. We manage the DNS and renewal for you, but it's your property.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I edit the site myself?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>On Pro tier, we can set up an optional CMS so you can make your own edits. On other plans, just email us what you need changed and we'll handle it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What if I need more pages later?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Add-on pages are available on any plan. Contact us for pricing &mdash; it depends on the complexity of what you need.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you do SEO?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Basic SEO setup is included on Growth. Full SEO &mdash; keyword research, content optimization, blog management, and monthly reporting &mdash; is included on Pro.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is there a setup fee?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. The website build is included with your annual plan at no extra cost. You just pay the monthly rate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FINAL CTA
+       ============================ -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2>Ready to get started?</h2>
+        <p>Tell us about your business and we'll put together a plan. No commitment, no pressure.</p>
+        <a href="mailto:sales@gritsoftware.dev?subject=Web Design - Getting Started" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Schedule a 15-Minute Call
+        </a>
+        <p class="cta-note">Or email sales@gritsoftware.dev directly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/banner.png" alt="Grit Software" class="footer-brand-logo">
+          <p>Reliable software and freelance tech services for real businesses.</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="/owninvoice">OwnInvoice</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="/services">All Services</a>
+            <a href="/services/web-design">Web Design</a>
+            <a href="mailto:sales@gritsoftware.dev">Get a Quote</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+            <a href="mailto:support@gritsoftware.dev">Support</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/refund">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Grit Software. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navigation
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          navToggle.classList.toggle('active');
+          const spans = navToggle.querySelectorAll('span');
+          if (navToggle.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+          } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+          }
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '';
+            spans[2].style.transform = '';
+          });
+        });
+      }
+
+      // Navbar Scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Scroll Reveal
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
