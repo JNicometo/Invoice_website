@@ -125,7 +125,7 @@ img { max-width: 100%; display: block; }
 /* ---- NAVBAR ---- */
 .navbar {
   position: fixed;
-  top: 38px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -147,10 +147,17 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 68px;
 }
 
-.nav-logo { display: flex; align-items: center; }
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+
+.nav-logo-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.3px;
+}
 
 .logo-mark {
   display: flex;
@@ -185,11 +192,11 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-links a {
-  padding: 7px 14px;
+  padding: 7px 16px;
   border-radius: var(--radius);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--gray-400);
+  color: rgba(255,255,255,0.5);
   transition: all 0.2s ease;
 }
 
@@ -200,10 +207,11 @@ img { max-width: 100%; display: block; }
 
 .nav-cta {
   background: var(--brand) !important;
-  color: var(--white) !important;
-  font-weight: 600 !important;
-  padding: 7px 18px !important;
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  padding: 8px 20px !important;
   margin-left: 8px !important;
+  border-radius: var(--radius-md) !important;
 }
 
 .nav-cta:hover {
@@ -1277,9 +1285,7 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .sale-banner { font-size: 13px; padding: 8px 12px; }
-  .sale-fire { display: none; }
-  .navbar { top: 34px; }
+  .navbar { top: 0; }
   .hero { padding: 150px 0 72px; }
   .hero h1 { font-size: 32px; letter-spacing: -1px; }
   .hero-subtitle { font-size: 15px; }
